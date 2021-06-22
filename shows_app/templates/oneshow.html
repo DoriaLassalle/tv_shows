@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+<title>{% block title %}Show Added{% endblock %}</title>
+
+{% block content%} 
+<div class="container">
+    <div class="row">        
+        <div class="col-6 offset-3">            
+            <h3>Tv Show Id: {{id}}</h3>
+            <h3>Title: {{title}}</h3>
+            <h3>Network: {{network}}</h3>
+            <h4>Release Date: {{release}}</h4>
+            <p><strong>Description: {{description}}</strong> </p>
+            <p><strong>Last Updated: {{updated}}</strong> </p>
+            <div>
+                <a href="/shows/{{id}}/edit" role="button" class="btn btn-primary ">Edit</a> 
+                <a href="/shows/{{id}}/destroy" role="button" class="btn btn-danger">Delete</a>
+                <a href="/shows" role="button" class="btn btn-secondary">Go Back</a>
+            </div>
+        </div>            
+    </div>
+</div>
+
+{% endblock %}

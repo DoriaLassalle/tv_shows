@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+<title>{% block title %}Add New{% endblock %}</title>
+
+{% block content%} 
+<div class="row">  
+    <h1 class="text-center ">Add a New Show</h1>
+    <div class="col-6 offset-3">
+        <a href="/shows" role="button" class="btn btn-secondary offset-10">Go Back</a>
+
+        <form action="add" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="network" class="form-label">Network</label>
+                <input type="text" class="form-control" id="network" name="network">
+            </div>
+            <div class="mb-3">
+                <label for="release" class="form-label">Release Date</label>
+                <input type="date" class="form-control" id="release" name="release">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-5">Create</button>
+        </form>
+    </div>    
+</div>
+
+{% endblock %}

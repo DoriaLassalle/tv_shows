@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+<title>{% block title %}Tv Shows {% endblock %}</title>
+
+{% block content%} 
+
+<h1 class=" text-center">All Shows</h1>
+<div class="row">
+    <div class="col-8 offset-2">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Network</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for show in tvShows %}
+                    <tr>
+                        <th scope="row">{{show.id}}</th>
+                        <td>{{show.title}}</td>
+                        <td>{{show.network}}</td>
+                        <td>{{show.release_date}}</td>
+                        <td><a href="/shows/{{show.id}}"><i class="far fa-eye"> </i></a> 
+                            <a href="/shows/{{show.id}}/edit"><i class="fas fa-edit"> </i></a>
+                            <a href="/shows/{{show.id}}/destroy"><i class="far fa-trash-alt"> </i></a>
+                        </td>                        
+                    </tr>
+                {% endfor %}            
+            </tbody>
+        </table> 
+        <a href="shows/new" role="button" class="btn btn-primary mb-5 ">Add a New Show</a>
+    </div>
+</div>
+    
+{% endblock %}
