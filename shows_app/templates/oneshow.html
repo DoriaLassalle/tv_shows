@@ -3,17 +3,18 @@
 <title>{% block title %}Show Added{% endblock %}</title>
 
 {% block content%} 
-<div class="container">
+<div class="container-fluid">
     <div class="row">        
-        <div class="col-6 offset-3">            
-            <h3>Tv Show Id: {{id}}</h3>
-            <h3>Title: {{title}}</h3>
-            <h3>Network: {{network}}</h3>
+        <div class="col-6 offset-3 p-5 bg-light">            
+            <h4>Show Id: {{id}}</h4>
+            <h3 class="fw-bold">Title: {{title}}</h3>
+            <h4>Network: {{network}}</h4>
             <h4>Release Date: {{release}}</h4>
             <p><strong>Description: {{description}}</strong> </p>
+            <hr>
             <p><strong>Last Updated: {{updated}}</strong> </p>
             <div>
-                <a href="/shows/{{id}}/edit" role="button" class="btn btn-primary ">Edit</a> 
+                <a href="/shows/{{id}}/edit" role="button" class="btn btn-info text-white">Edit</a> 
                 <a href="/shows/{{id}}/destroy" role="button" class="btn btn-danger">Delete</a>
                 <a href="/shows" role="button" class="btn btn-secondary">Go Back</a>
             </div>
