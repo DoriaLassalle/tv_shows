@@ -5,10 +5,8 @@
 {% block content%} 
 
 <div class="row">    
-    <h1 class="text-center col-6 offset-3 bg-light p-2">Edit Show</h1>
-    
-    <div class="col-6 offset-3 bg-light p-4">     
-     
+    <h1 class="text-center col-6 offset-3 bg-light p-2 mb-0">Edit Show</h1>    
+    <div class="col-6 offset-3 bg-light p-4">    
         <form action="update" method="POST">
             {% csrf_token %}
             <div class="mb-3">
