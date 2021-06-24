@@ -21,7 +21,7 @@ def addShowTemp(request):
     return render(request, "newshow.html", context) # solo nuestra el template para ingresar un nuevo show
 
 def addShow(request):    
-    errorsFromMyValidator=Show.objects.basic_validator(request.POST)#paso lo que viene en post a mi metodo y lo guardo en la variable   
+    errorsFromMyValidator=Show.objects.complete_validator(request.POST)#paso lo que viene en post a mi metodo y lo guardo en la variable   
     if len(errorsFromMyValidator)>0:  #compruebo si el dicc de errores tiene algo        
         for key, value in errorsFromMyValidator.items(): #si hay, recorro el dicc y creo el msg flash            
             messages.error(request, value)

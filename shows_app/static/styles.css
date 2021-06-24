@@ -2,8 +2,15 @@
 
 body{
     font-family: 'Roboto Condensed', sans-serif;
-    background: url(/static/imgs/tv.png) no-repeat center;
+    background: url(/static/imgs/tv.png) center;
 }
 .shad{
-    box-shadow: 5px 8px 15px 5px #0dcaf0 ; /*derecha, abajo, blur, size- inset->innershadow  */
+    box-shadow: 5px 8px 15px 5px #050505 ; /*derecha, abajo, blur, size- inset->innershadow  */
+}
+.txt-shadow{
+    text-shadow: 4px 2px  #000000;    
+}
+
+.bgd{
+    background-color: #43515a;
 }

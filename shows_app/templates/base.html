@@ -12,12 +12,16 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <script type='text/javascript' src="{% static 'front_validations.js' %}"></script>
+    <script type='text/javascript' src="{% static 'click.js' %}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="https://kit.fontawesome.com/ee2489e1a6.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
-    <h1 class="text-center text-white py-4 mt-0 mb-4 bg-info fw-bolder ">TV Shows Asignment</h1>
+    <h1 class="text-center text-white py-3 mt-0 mb-4 fw-bolder txt-shadow bgd shad ">TV Shows Asignment</h1>
     {% block content%}
     {% endblock %}    
 </body>

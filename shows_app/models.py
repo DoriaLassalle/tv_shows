@@ -18,14 +18,23 @@ class ShowManager(models.Manager):
         now=datetime.now() #obtengo la fecha actual        
         release=datetime.strptime(postData['release'], '%Y-%m-%d') #recibo la fecha ingresada que viene como str y la paso a formato de fecha        
         if release > now:   #comparo ambas fechas que la ingresada no sea mayor a la actual
-            errors['release']="Release Date must be BEFORE today."
+            errors['release']="Release Date must be BEFORE today."   
+
+        return errors
+
+    def complete_validator(self, postData):
+        errors=self.basic_validator(postData) #todo lo del validador anterior mas lo nuevo
 
         existentTitles=Show.objects.all()   #traigo todos los show de la base y la recorro
         for showTitle in existentTitles:
             if postData['title']==showTitle.title:   #comparo el titulo ingresado con los existentes
-                errors['tileDuplicate']="This Show title already exists. Enter another"    
+                errors['tileDuplicate']="This Show title already exists. Enter another"
 
         return errors
+
+        #separe las validaciones porque producia conflicto validar el titulo al editar un show
+        #pk al guardar reconocia el titulo como existente al usar el mismo validador en las 
+        #fucniones addShow y updateShow
 
 class Network(models.Model):
     name=models.CharField(max_length=255) 

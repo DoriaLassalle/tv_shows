@@ -3,11 +3,9 @@
 <title>{% block title %}Tv Shows {% endblock %}</title>
 
 {% block content%} 
-
-
-<div class="row">
-    <h1 class=" text-center col-8 offset-2 bg-light p-2 mb-0">All Shows</h1>
-    <div class="col-8 offset-2 bg-light">
+<div class="row mb-4">    
+    <div class="col-8 offset-2 bg-light shad">
+        <h1 class=" text-center col-8 offset-2 bg-light p-2 mb-0">All Shows</h1>
         <table class="table table-striped">
             <thead>
               <tr>
@@ -35,6 +33,5 @@
         </table> 
         <a href="shows/new" role="button" class="btn btn-info text-white mb-2 ">Add a New Show</a>
     </div>
-</div>
-    
+</div>    
 {% endblock %}

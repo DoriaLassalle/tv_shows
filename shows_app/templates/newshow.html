@@ -3,10 +3,10 @@
 <title>{% block title %}Add New{% endblock %}</title>
 
 {% block content%} 
-<div class="row">  
-    <h1 class="text-center col-6 offset-3 bg-light p-2 mb-0">Add a New Show</h1>    
-    <div class="col-6 offset-3 bg-light p-4">  
-        <form action="add" method="POST">
+<div class="row mb-3">      
+    <div class="col-6 offset-3 bg-light p-4 shad ">  
+        <h1 class="text-center col-6 offset-3 bg-light p-2 mb-0">Add a New Show</h1> 
+        <form action="add" method="POST" class="add-form">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -14,7 +14,7 @@
             </div>
             <div class=" mb-3">
                 <label for="release" class="form-label">Select a Network</label>  
-                <select class="form-select" aria-label="Default select example" name="network" required>                
+                <select class="form-select" id="network" aria-label="Default select example" name="network" required>                
                     {% for net in allNetworks %}
                         <option value="{{net.id}}">{{net.name}}</option>
                     {% endfor %}
